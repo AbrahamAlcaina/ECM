@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECM", "ECM\ECM.csproj", "{5EFD2B4C-8DBB-4C61-9A98-180A432A5CA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECM.Test", "ECM.Test\ECM.Test.csproj", "{9EB47D6C-50B8-42A0-A28E-569C7339FF93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0EEF8D08-5BFD-450B-9072-AF469DE843ED}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EFD2B4C-8DBB-4C61-9A98-180A432A5CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFD2B4C-8DBB-4C61-9A98-180A432A5CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFD2B4C-8DBB-4C61-9A98-180A432A5CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFD2B4C-8DBB-4C61-9A98-180A432A5CA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB47D6C-50B8-42A0-A28E-569C7339FF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB47D6C-50B8-42A0-A28E-569C7339FF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB47D6C-50B8-42A0-A28E-569C7339FF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB47D6C-50B8-42A0-A28E-569C7339FF93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
