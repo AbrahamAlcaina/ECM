@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
 
     if (!$.ss) $.ss = {};
     if (!$.ss.validation)
@@ -10,7 +10,7 @@
                 Email: "Invalid email",
                 AlreadyExists: "Already exists"
             },
-            errorFilter: function (errorMsg, errorCode, type) {
+            errorFilter: function(errorMsg, errorCode, type) {
                 return this.overrideMessages
                     ? this.messages[errorCode] || errorMsg || splitCase(errorCode)
                     : errorMsg || splitCase(errorCode);
@@ -18,13 +18,15 @@
         };
 
     function splitCase(t) {
-         return typeof t != 'string' ? t : t.replace( /([A-Z]|[0-9]+)/g , ' $1').replace( /_/g , ' ');
-        };
-    
+        return typeof t != 'string' ? t : t.replace(/([A-Z]|[0-9]+)/g, ' $1').replace(/_/g, ' ');
+    }
+
+    ;
+
     $.fn.applyErrors = function(responseStatus, opt) {
         this.clearErrors();
         if (!responseStatus) return this;
-        
+
         this.addClass("error");
 
         var o = _.defaults({}, opt, $.ss.validation);
@@ -33,13 +35,13 @@
             _.extend(o.messages, $.ss.validation.messages);
         }
 
-        var filter = _.bind(o.errorFilter, o), 
+        var filter = _.bind(o.errorFilter, o),
             errors = responseStatus.errors;
 
         console.log(errors, responseStatus);
 
         if (errors && errors.length) {
-            var fieldMap = { };
+            var fieldMap = {};
             this.find("input").each(function() {
                 var $el = $(this);
                 var $prev = $el.prev(), $next = $el.next();
@@ -51,7 +53,7 @@
                 }
             });
             _.each(errors, function(error) {
-                var $field = fieldMap[(error.fieldName||"").toLowerCase()];
+                var $field = fieldMap[(error.fieldName || "").toLowerCase()];
                 if (!$field) return;
 
                 $field.parent().addClass("error");
@@ -68,7 +70,7 @@
 
     $.fn.clearErrors = function() {
         this.removeClass("error");
-        this.find(".error>.help-inline, .error>.help-block").each(function () {
+        this.find(".error>.help-inline, .error>.help-block").each(function() {
             $(this).html("");
         });
         return this.find(".error").each(function() {
