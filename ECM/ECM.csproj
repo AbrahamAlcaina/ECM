@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="00.-Application\00.-Services\FileService.cs" />
+    <Compile Include="00.-Application\01.-Routing\Routing.cs" />
     <Compile Include="02.-Domain\00.-Entities\Alias.cs" />
     <Compile Include="02.-Domain\00.-Entities\Client.cs" />
     <Compile Include="02.-Domain\00.-Entities\Comment.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="02.-Domain\00.-Entities\Status.cs" />
     <Compile Include="03.-Infrastructure\00.-ServiceStack\AppHost.cs" />
     <Compile Include="00.-Application\Program.cs" />
+    <Compile Include="03.-Infrastructure\01.-Repositories\FileRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

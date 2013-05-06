@@ -17,6 +17,7 @@ namespace ECM.Domain.Entities
         public Client Client { get; set; }
         public Partner Partner { get; set; }
         public Guid ParentId { get; set; }
+        public Guid FileId { get; set; }
         public IEnumerable<Status> Statuses { get; set; }
         public IEnumerable<string> Tags { get; set; }
         public IEnumerable<Alias> Aliases { get; set; }
