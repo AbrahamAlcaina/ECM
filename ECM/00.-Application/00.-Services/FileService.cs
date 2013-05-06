@@ -33,6 +33,13 @@ namespace ECM.Application.Services
             return files.Count == 0 ? FileNotFound(tags) : files;
         }
 
+        public object Post(FileCreationRequest file)
+        {
+            var fileResponse = file.ToResponseDto<File>();
+            Repository.Add(fileResponse);
+            return fileResponse;
+        }
+
         private static object FileNotFound(object idFile)
         {
             return new HttpResult
