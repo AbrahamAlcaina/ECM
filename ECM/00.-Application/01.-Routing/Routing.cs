@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ECM.Domain.Entities;
 using ServiceStack.ServiceHost;
 
@@ -15,9 +16,27 @@ namespace ECM.Application.Routing
     {
         public FileType Type { get; set; }
     }
+    
+    [Route("/api/ecm/files/tags/{listTags*}/")]
+    internal  class FileByTagsRequest
+    {
+        private string _listTags;
 
-    //[Route("api/ecm/tag/")]
+        public string ListTags
+        {
+            get { return _listTags; }
+            set { 
+                _listTags = value;
+                foreach (var tag in _listTags.Split('+'))
+                {
+                    Tags.Add(tag.Replace("+",""));
+                }
+            }
+        }
 
+        public IList<string> Tags { get; set; }
+    }
+   
     //[Route("api/ecm/files/chid/{idFile}/")]
     //[Route("api/ecm/files/{idFile}/content/")]
     //[Route("api/ecm/files/alias/{aliasName}/")]

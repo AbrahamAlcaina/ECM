@@ -17,22 +17,38 @@ namespace ECM.Application.Services
         public object Get(FileRequest file)
         {
             List<File> files = Repository.All(f => f.FileId == file.IdFile).ToList();
+            if (files.Count == 0) return FileNotFound(file.IdFile);
+            return files.Count > 1 ? TooManyFiles(file.IdFile) : files.First();
+        }
 
-            if (files.Count == 0)
-                return new HttpResult
-                    {
-                        StatusCode = HttpStatusCode.NotFound,
-                        Response = String.Format("File not found '{0}'", file.IdFile)
-                    };
+        public object Get(FileByTypeRequest type)
+        {
+            List<File> files = Repository.All(f => f.Type == type.Type).ToList();
+            return files.Count == 0 ? FileNotFound(type.Type) : files;
+        }
 
-            if (files.Count > 1)
-                return new HttpResult
-                    {
-                        StatusCode = HttpStatusCode.NotFound,
-                        Response = String.Format("Too many files with id '{0}'", file.IdFile)
-                    };
+        public object Get(FileByTagsRequest tags)
+        {
+            List<File> files = Repository.All(f => f.Tags.Any(t => tags.Tags.Contains(t))).ToList();
+            return files.Count == 0 ? FileNotFound(tags) : files;
+        }
 
-            return files.First();
+        private static object FileNotFound(object idFile)
+        {
+            return new HttpResult
+                {
+                    StatusCode = HttpStatusCode.NotFound,
+                    Response = String.Format("File not found '{0}'", idFile)
+                };
+        }
+
+        private static object TooManyFiles(object idFile)
+        {
+            return new HttpResult
+                {
+                    StatusCode = HttpStatusCode.NotFound,
+                    Response = String.Format("Too many files with id '{0}'", idFile)
+                };
         }
     }
 }
