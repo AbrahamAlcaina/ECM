@@ -9,9 +9,10 @@ namespace ECM.Application.Routing
     internal class FileRequest
     {
         public Guid IdFile { get; set; }
+        public FileType Type { get; set; }
     }
 
-    [Route("/api/ecm/files/filetype/{type}/", Verbs = "GET")]
+   [Route("/api/ecm/files/filetype/{type}/", Verbs = "GET")]
     internal class FileByTypeRequest
     {
         public FileType Type { get; set; }
