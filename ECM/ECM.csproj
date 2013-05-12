@@ -85,7 +85,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="00.-Application\00.-Services\FileService.cs" />
-    <Compile Include="00.-Application\01.-Routing\Routing.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByAlias.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByDatesFileType.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByTagsRequest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByTypeRequest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByUpdatedDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByUpdatedDatesType.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileChilds.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileContent.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileRequest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileCreationRequest.cs" />
     <Compile Include="02.-Domain\00.-Entities\Alias.cs" />
     <Compile Include="02.-Domain\00.-Entities\Client.cs" />
     <Compile Include="02.-Domain\00.-Entities\Comment.cs" />
@@ -97,6 +107,7 @@
     <Compile Include="03.-Infrastructure\00.-ServiceStack\AppHost.cs" />
     <Compile Include="00.-Application\Program.cs" />
     <Compile Include="03.-Infrastructure\01.-Repositories\FileRepository.cs" />
+    <Compile Include="03.-Infrastructure\02-LinqExtensions\IEnumerable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

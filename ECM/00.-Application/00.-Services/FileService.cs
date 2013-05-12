@@ -33,6 +33,33 @@ namespace ECM.Application.Services
             return files.Count == 0 ? FileNotFound(tags) : files;
         }
 
+        public object Get(FileChilds file)
+        {
+            var files = Repository.All(f => f.ParentId == file.IdFile).ToList();
+            return files.Count == 0 ? FileNotFound(file.IdFile) : files;
+        }
+
+        public object Get(FileByUpdatedDates file)
+        {
+            var files = Repository.All(f => f.LastUpdateTime >= file.StartDate && f.LastUpdateTime <= file.EndDate).ToList();
+            return files.Count == 0 ? FileNotFound(file) : files;
+        }
+
+        public object Get(FileByDatesFileType file)
+        {
+            var files = Repository.All(f => f.Type == file.FileType && 
+                f.ReceptionDate >= file.StartDate &&  f.ReceptionDate <= file.EndDate).ToList();
+            return files.Count == 0 ? FileNotFound(file) : files;
+        }
+
+        public object Get(FileByUpdatedDatesType file)
+        {
+            var files = Repository.All(f => f.Type == file.FileType &&
+                                            f.LastUpdateTime >= file.StartDate && f.LastUpdateTime <= file.EndDate)
+                                  .ToList();
+            return files.Count == 0 ? FileNotFound(file) : files;
+        }
+
         public object Post(FileCreationRequest file)
         {
             var fileResponse = file.ToResponseDto<File>();

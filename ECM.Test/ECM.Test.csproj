@@ -61,6 +61,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="00.-Application\01.-Routing\FileByTagsRequestTest.cs" />
     <Compile Include="00.-Application\ProgramTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +73,9 @@
       <Project>{5efd2b4c-8dbb-4c61-9a98-180a432a5ca9}</Project>
       <Name>ECM</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="02.-Domain\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
