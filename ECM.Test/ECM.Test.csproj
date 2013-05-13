@@ -62,6 +62,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequestTest.cs" />
+    <Compile Include="00.-Application\02.-Mapping\MappingsTest.cs" />
     <Compile Include="00.-Application\ProgramTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

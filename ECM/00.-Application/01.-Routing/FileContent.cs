@@ -2,6 +2,6 @@
 
 namespace ECM.Application.Routing
 {
-    [Route("api/ecm/files/{idFile}/content/")]
+    [Route("/api/ecm/files/{idFile}/content/")]
     public class FileContent : FileRequest {}
 }

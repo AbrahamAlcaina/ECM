@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using ECM.Application.Mapping;
 using ECM.Application.Routing;
 using ECM.Domain.Entities;
 using MongoRepository;
@@ -23,7 +24,8 @@ namespace ECM.Application.Services
 
         public object Get(FileByTypeRequest type)
         {
-            List<File> files = Repository.All(f => f.Type == type.Type).ToList();
+            var fileType = type.ToDto();
+            List<File> files = Repository.All(f => f.Type == fileType).ToList();
             return files.Count == 0 ? FileNotFound(type.Type) : files;
         }
 

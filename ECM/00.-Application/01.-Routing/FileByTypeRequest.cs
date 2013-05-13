@@ -6,6 +6,6 @@ namespace ECM.Application.Routing
     [Route("/api/ecm/files/filetype/{type}/")]
     public class FileByTypeRequest
     {
-        public FileType Type { get; set; }
+        public string Type { get; set; }
     }
 }

@@ -96,6 +96,7 @@
     <Compile Include="00.-Application\01.-Routing\FileContent.cs" />
     <Compile Include="00.-Application\01.-Routing\FileRequest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileCreationRequest.cs" />
+    <Compile Include="00.-Application\02.-Mapping\Mappings.cs" />
     <Compile Include="02.-Domain\00.-Entities\Alias.cs" />
     <Compile Include="02.-Domain\00.-Entities\Client.cs" />
     <Compile Include="02.-Domain\00.-Entities\Comment.cs" />

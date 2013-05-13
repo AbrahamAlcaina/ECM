@@ -4,7 +4,7 @@ using ServiceStack.ServiceHost;
 
 namespace ECM.Application.Routing
 {
-    [Route("api/ecm/files/lastupdatefrom/{startdate}/to/{enddate}/filetype/{type}/")]
+    [Route("/api/ecm/files/lastupdatefrom/{startdate}/to/{enddate}/filetype/{type}/")]
     public class FileByUpdatedDatesType : FileByUpdatedDates
     {
         public FileType FileType { get; set; }
