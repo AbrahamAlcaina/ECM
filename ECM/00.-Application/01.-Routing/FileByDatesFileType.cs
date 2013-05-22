@@ -7,7 +7,11 @@ namespace ECM.Application.Routing
     [Route("/api/ecm/files/from/{startdate}/to/{enddate}/filetype/{type}/")]
     public class FileByDatesFileType : FileByDates
     {
+<<<<<<< HEAD
         public FileType FileType { get; set; }
+=======
+        public string FileType { get; set; }
+>>>>>>> Refactoring using Specifications
 
         public override string ToString()
         {

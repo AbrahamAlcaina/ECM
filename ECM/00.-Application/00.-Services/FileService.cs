@@ -1,40 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using ECM.Application.Mapping;
 using ECM.Application.Routing;
+using ECM.Application.Specifications;
 using ECM.Domain.Entities;
-using MongoRepository;
+using ECM.Domain.Specifications;
+using ECM.Infrastructure;
 using ServiceStack.Common.Web;
-using ServiceStack.ServiceInterface;
 
 namespace ECM.Application.Services
 {
-    internal class FileService : Service
+    internal class FileService : FileServiceBase
     {
-        public IRepository<File> Repository { get; set; }
-
-        public object Get(FileRequest file)
+        public object Get(FileById request)
         {
-            List<File> files = Repository.All(f => f.FileId == file.IdFile).ToList();
-            if (files.Count == 0) return FileNotFound(file.IdFile);
-            return files.Count > 1 ? TooManyFiles(file.IdFile) : files.First();
+            var criteria = new FindFileById(request.IdFile);
+            return CreateReponseForSingleFileByCriteria(request, criteria);
         }
 
-        public object Get(FileByTypeRequest type)
+        public object Get(FileByType request)
         {
+            var criteria = new FindFileByType(request.Type); 
+            return CreateResponseForFilesByCriteria(request, criteria);
+        }
+
+        public object Get(FileByTags request)
+        {
+<<<<<<< HEAD
             var fileType = type.ToDto();
             List<File> files = Repository.All(f => f.Type == fileType).ToList();
             return files.Count == 0 ? FileNotFound(type.Type) : files;
+=======
+            var criteria = new FindFileByTags(request.Tags);
+            return CreateResponseForFilesByCriteria(request, criteria);
+>>>>>>> Refactoring using Specifications
         }
 
-        public object Get(FileByTagsRequest tags)
+        public object Get(FileChilds request)
         {
-            List<File> files = Repository.All(f => f.Tags.Any(t => tags.Tags.Contains(t))).ToList();
-            return files.Count == 0 ? FileNotFound(tags) : files;
+            var criteria = new Specification<File>(f => f.ParentId == request.IdFile);
+            return CreateResponseForFilesByCriteria(request, criteria);
         }
 
+<<<<<<< HEAD
         public object Get(FileChilds file)
         {
             var files = Repository.All(f => f.ParentId == file.IdFile).ToList();
@@ -63,28 +73,33 @@ namespace ECM.Application.Services
         }
 
         public object Post(FileCreationRequest file)
+=======
+        public object Get(FileByUpdatedDates request)
+>>>>>>> Refactoring using Specifications
+        {
+            var criteria = new FindFileByLastUpdateRange(request.StartDate, request.EndDate);
+            return CreateResponseForFilesByCriteria(request, criteria);
+        }
+
+        public object Get(FileByDatesFileType request)
+        {
+            var criteria = new FindFileByReceptionDateRange(request.StartDate, request.EndDate)
+                .And(new FindFileByType(request.FileType));
+            return CreateResponseForFilesByCriteria(request, criteria);
+        }
+
+        public object Get(FileByUpdatedDatesType request)
+        {
+            var criteria = new FindFileByLastUpdateRange(request.StartDate, request.EndDate)
+                .And(new FindFileByType(request.FileType));
+            return CreateResponseForFilesByCriteria(request, criteria);
+        }
+
+        public object Post(FileCreation file)
         {
             var fileResponse = file.ToResponseDto<File>();
             Repository.Add(fileResponse);
             return fileResponse;
-        }
-
-        private static object FileNotFound(object idFile)
-        {
-            return new HttpResult
-                {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Response = String.Format("File not found '{0}'", idFile)
-                };
-        }
-
-        private static object TooManyFiles(object idFile)
-        {
-            return new HttpResult
-                {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Response = String.Format("Too many files with id '{0}'", idFile)
-                };
         }
     }
 }

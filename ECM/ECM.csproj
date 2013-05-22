@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,18 +85,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="00.-Application\00.-Services\ClientFilesService.cs" />
+    <Compile Include="00.-Application\00.-Services\EntityFilesService.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByEntity.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileById.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByReceptionDateRange.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByClient.cs" />
     <Compile Include="00.-Application\00.-Services\FileService.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByAlias.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDates.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDatesFileType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTypeRequest.cs" />
+    <Compile Include="00.-Application\00.-Services\FileServiceBase.cs" />
+    <Compile Include="00.-Application\00.-Services\Service.cs" />
+    <Compile Include="00.-Application\01.-Routing\CycleByUpdatedDatesType.cs" />
+    <Compile Include="00.-Application\01.-Routing\Client.cs" />
+    <Compile Include="00.-Application\01.-Routing\ClientByDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\ClientByDatesFileType.cs" />
+    <Compile Include="00.-Application\01.-Routing\ClientByTags.cs" />
+    <Compile Include="00.-Application\01.-Routing\ClientByType.cs" />
+    <Compile Include="00.-Application\01.-Routing\ClientByUpdatedDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\ClientByUpdatedDatesType.cs" />
+    <Compile Include="00.-Application\01.-Routing\Cycle.cs" />
+    <Compile Include="00.-Application\01.-Routing\CycleByDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\CycleByDatesFileType.cs" />
+    <Compile Include="00.-Application\01.-Routing\CycleByTag.cs" />
+    <Compile Include="00.-Application\01.-Routing\CycleByType.cs" />
+    <Compile Include="00.-Application\01.-Routing\CycleByUpdatedDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\Entity.cs" />
+    <Compile Include="00.-Application\01.-Routing\EntityByDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\EntityByDatesFileType.cs" />
+    <Compile Include="00.-Application\01.-Routing\EntityByTags.cs" />
+    <Compile Include="00.-Application\01.-Routing\EntityByType.cs" />
+    <Compile Include="00.-Application\01.-Routing\EntityByUpdatedDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\EntityByUpdatedDatesType.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByAlias.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByDatesFileType.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByTags.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByUpdatedDates.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByUpdatedDatesType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileChilds.cs" />
     <Compile Include="00.-Application\01.-Routing\FileContent.cs" />
     <Compile Include="00.-Application\01.-Routing\FileRequest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileCreationRequest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileById.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileCreation.cs" />
+    <Compile Include="00.-Application\01.-Routing\Paygroup.cs" />
+    <Compile Include="00.-Application\01.-Routing\PaygroupByDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\PaygroupByDatesFileType.cs" />
+    <Compile Include="00.-Application\01.-Routing\PaygroupByTag.cs" />
+    <Compile Include="00.-Application\01.-Routing\PaygroupByType.cs" />
+    <Compile Include="00.-Application\01.-Routing\PaygroupByUpdatedDates.cs" />
+    <Compile Include="00.-Application\01.-Routing\PaygroupByUpdatedDatesType.cs" />
     <Compile Include="00.-Application\02.-Mapping\Mappings.cs" />
     <Compile Include="02.-Domain\00.-Entities\Alias.cs" />
     <Compile Include="02.-Domain\00.-Entities\Client.cs" />
@@ -105,10 +149,21 @@
     <Compile Include="02.-Domain\00.-Entities\Mode.cs" />
     <Compile Include="02.-Domain\00.-Entities\Partner.cs" />
     <Compile Include="02.-Domain\00.-Entities\Status.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByLastUpdate.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByTags.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByType.cs" />
     <Compile Include="03.-Infrastructure\00.-ServiceStack\AppHost.cs" />
     <Compile Include="00.-Application\Program.cs" />
     <Compile Include="03.-Infrastructure\01.-Repositories\FileRepository.cs" />
     <Compile Include="03.-Infrastructure\02-LinqExtensions\IEnumerable.cs" />
+    <Compile Include="03.-Infrastructure\01.-Repositories\IFileRepository.cs" />
+    <Compile Include="03.-Infrastructure\02-LinqExtensions\IEnumerable.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\AndSpecification.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\CompositeSpecification.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\ISpecification.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\NotEqualSpecification.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\OrSpecification.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\Specification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,9 +173,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Content\js\ss-validation.js" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
