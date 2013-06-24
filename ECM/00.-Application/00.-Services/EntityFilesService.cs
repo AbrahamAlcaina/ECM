@@ -1,60 +1,126 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ECM.Application.Routing;
-using ECM.Application.Specifications;
-using ECM.Domain.Entities;
-using ECM.Domain.Specifications;
-using ECM.Infrastructure;
-using Entity = ECM.Application.Routing.Entity;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EntityFilesService.cs" company="Abraham Alcaina">
+//   Abraham Alcaina
+// </copyright>
+// <summary>
+//   The entity files service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ECM.Application.Services
 {
-    class EntityFilesService : FileServiceBase
+    using ECM.Application.Routing;
+    using ECM.Application.Specifications;
+    using ECM.Domain.Entities;
+    using ECM.Domain.Specifications;
+    using ECM.Infrastructure;
+
+    /// <summary>
+    ///     The entity files service.
+    /// </summary>
+    internal class EntityFilesService : FileServiceBase
     {
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(Entity request)
         {
             var criteria = new FindFileByEntity(request.Cid, request.Cuid);
-            return CreateResponseForFilesByCriteria(request, criteria);
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(EntityByType request)
         {
-            var criteria = new FindFileByEntity(request.Cid, request.Cuid)
-                .And(new FindFileByType(request.Type));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByEntity(request.Cid, request.Cuid).And(new FindFileByType(request.Type));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(EntityByTags request)
         {
-            var criteria = new FindFileByEntity(request.Cid, request.Cuid)
-                .And(new FindFileByTags(request.Tags));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByEntity(request.Cid, request.Cuid).And(new FindFileByTags(request.Tags));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(EntityByUpdatedDates request)
         {
-            var criteria = new FindFileByEntity(request.Cid, request.Cuid)
-                .And(new FindFileByLastUpdateRange(request.StartDate, request.EndDate));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByEntity(request.Cid, request.Cuid).And(
+                    new FindFileByLastUpdateRange(request.StartDate, request.EndDate));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(EntityByDatesFileType request)
         {
-            var criteria = new FindFileByEntity(request.Cid, request.Cuid)
-                .And(new FindFileByReceptionDateRange(request.StartDate, request.EndDate))
-                .And(new FindFileByType(request.FileType));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByEntity(request.Cid, request.Cuid).And(
+                    new FindFileByReceptionDateRange(request.StartDate, request.EndDate))
+                                                               .And(new FindFileByType(request.FileType));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(EntityByUpdatedDatesType request)
         {
-            var criteria = new FindFileByEntity(request.Cid, request.Cuid)
-                .And(new FindFileByLastUpdateRange(request.StartDate, request.EndDate))
-                .And(new FindFileByType(request.FileType));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByEntity(request.Cid, request.Cuid).And(
+                    new FindFileByLastUpdateRange(request.StartDate, request.EndDate))
+                                                               .And(new FindFileByType(request.FileType));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
+
+        #endregion
     }
 }

@@ -1,31 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using ServiceStack.Common.Web;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Service.cs" company="Abraham Alcaina">
+//   Abraham Alcaina
+// </copyright>
+// <summary>
+//   The service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ECM.Application.Services
 {
-    public class Service : ServiceStack.ServiceInterface.Service 
+    using System.Net;
+
+    using ServiceStack.Common.Web;
+
+    /// <summary>
+    ///     Base service for the application
+    /// </summary>
+    public class Service : ServiceStack.ServiceInterface.Service
     {
-        public static object FileNotFound(object target)
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The file not found.
+        /// </summary>
+        /// <param name="target">
+        /// The target.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
+        public object FileNotFound(object target)
         {
             return new HttpResult
-            {
-                StatusCode = HttpStatusCode.NotFound,
-                Response = String.Format("File not found '{0}'", target)
-            };
+                       {
+                           StatusCode = HttpStatusCode.NotFound, 
+                           Response = string.Format("File not found '{0}'", target)
+                       };
         }
 
-        public static object TooManyFiles(object target)
+        /// <summary>
+        /// The too many files.
+        /// </summary>
+        /// <param name="target">
+        /// The target.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
+        public object TooManyFiles(object target)
         {
             return new HttpResult
-            {
-                StatusCode = HttpStatusCode.NotFound,
-                Response = String.Format("Too many files with id '{0}'", target)
-            };
+                       {
+                           StatusCode = HttpStatusCode.NotFound, 
+                           Response = string.Format("Too many files with id '{0}'", target)
+                       };
         }
+
+        #endregion
     }
 }

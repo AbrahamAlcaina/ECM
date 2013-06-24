@@ -1,15 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ECM.Domain.Entities;
-using ECM.Infrastructure;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FindFileById.cs" company="Abraham Alcaina">
+//   Abraham Alcaina
+// </copyright>
+// <summary>
+//   The find file by id.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ECM.Domain.Specifications
 {
-    class FindFileById : Specification<File>
+    using System;
+
+    using ECM.Domain.Entities;
+    using ECM.Infrastructure;
+
+    /// <summary>
+    ///     The find file by id.
+    /// </summary>
+    internal class FindFileById : Specification<File>
     {
-        public FindFileById(Guid idFile): base (f => f.FileId == idFile){}
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FindFileById"/> class.
+        /// </summary>
+        /// <param name="idFile">
+        /// The id file.
+        /// </param>
+        public FindFileById(Guid idFile)
+            : base(f => f.FileId == idFile)
+        {
+        }
+
+        #endregion
     }
 }

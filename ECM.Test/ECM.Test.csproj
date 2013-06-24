@@ -61,6 +61,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="00.-Application\00.-Services\ClientFilesServiceTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequestTest.cs" />
     <Compile Include="00.-Application\02.-Mapping\MappingsTest.cs" />
     <Compile Include="00.-Application\ProgramTest.cs" />

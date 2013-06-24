@@ -92,7 +92,6 @@
     <Compile Include="02.-Domain\04.-Specifications\FindFileByReceptionDateRange.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindFileByClient.cs" />
     <Compile Include="00.-Application\00.-Services\FileService.cs" />
-    <Compile Include="00.-Application\01.-Routing\FileByAlias.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDates.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDatesFileType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequest.cs" />
@@ -121,8 +120,6 @@
     <Compile Include="00.-Application\01.-Routing\EntityByUpdatedDates.cs" />
     <Compile Include="00.-Application\01.-Routing\EntityByUpdatedDatesType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByAlias.cs" />
-    <Compile Include="00.-Application\01.-Routing\FileByDates.cs" />
-    <Compile Include="00.-Application\01.-Routing\FileByDatesFileType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTags.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByType.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByUpdatedDates.cs" />
@@ -157,7 +154,6 @@
     <Compile Include="03.-Infrastructure\01.-Repositories\FileRepository.cs" />
     <Compile Include="03.-Infrastructure\02-LinqExtensions\IEnumerable.cs" />
     <Compile Include="03.-Infrastructure\01.-Repositories\IFileRepository.cs" />
-    <Compile Include="03.-Infrastructure\02-LinqExtensions\IEnumerable.cs" />
     <Compile Include="03.-Infrastructure\04.-Specifications\AndSpecification.cs" />
     <Compile Include="03.-Infrastructure\04.-Specifications\CompositeSpecification.cs" />
     <Compile Include="03.-Infrastructure\04.-Specifications\ISpecification.cs" />

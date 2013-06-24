@@ -1,11 +1,20 @@
-﻿using ServiceStack.ServiceHost;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FileContent.cs" company="Abraham Alcaina">
+//   Abraham Alcaina
+// </copyright>
+// <summary>
+//   The file content.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ECM.Application.Routing
 {
+    using ServiceStack.ServiceHost;
+
+    /// <summary>
+    ///     The file content.
+    /// </summary>
     [Route("/api/ecm/files/{idFile}/content/")]
-<<<<<<< HEAD
-    public class FileContent : FileRequest {}
-=======
-    public class FileContent : FileById {}
->>>>>>> Refactoring using Specifications
+    public class FileContent : FileById
+    {
+    }
 }

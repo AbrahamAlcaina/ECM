@@ -1,59 +1,124 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ECM.Application.Routing;
-using ECM.Application.Specifications;
-using ECM.Domain.Entities;
-using ECM.Domain.Specifications;
-using ECM.Infrastructure;
-using Client = ECM.Application.Routing.Client;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ClientFilesService.cs" company="Abraham Alcaina">
+//   Abraham Alcaina
+// </copyright>
+// <summary>
+//   The client files service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ECM.Application.Services
 {
-    class ClientFilesService : FileServiceBase
+    using ECM.Application.Routing;
+    using ECM.Application.Specifications;
+    using ECM.Domain.Entities;
+    using ECM.Domain.Specifications;
+    using ECM.Infrastructure;
+
+    using Client = ECM.Application.Routing.Client;
+
+    /// <summary>
+    ///     The client files service.
+    /// </summary>
+    internal class ClientFilesService : FileServiceBase
     {
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(Client request)
         {
             var criteria = new FindFileByClient(request.Cid);
-            return CreateResponseForFilesByCriteria(request, criteria);
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(ClientByType request)
         {
-            var criteria = new FindFileByClient(request.Cid)
-                .And(new FindFileByType(request.Type));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria = new FindFileByClient(request.Cid).And(new FindFileByType(request.Type));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(ClientByTags request)
         {
-            var criteria = new FindFileByClient(request.Cid)
-                .And(new FindFileByTags(request.Tags));
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria = new FindFileByClient(request.Cid).And(new FindFileByTags(request.Tags));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(ClientByUpdatedDates request)
         {
-            var criteria = new FindFileByClient(request.Cid)
-                .And(new FindFileByLastUpdateRange(request.StartDate, request.EndDate)); 
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByClient(request.Cid).And(new FindFileByLastUpdateRange(request.StartDate, request.EndDate));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(ClientByDatesFileType request)
         {
-            var criteria = new FindFileByClient(request.Cid)
-                .And(new FindFileByReceptionDateRange(request.StartDate, request.EndDate)); 
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByClient(request.Cid).And(
+                    new FindFileByReceptionDateRange(request.StartDate, request.EndDate));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
 
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="object"/>.
+        /// </returns>
         public object Get(ClientByUpdatedDatesType request)
         {
-            var criteria = new FindFileByClient(request.Cid)
-                .And(new FindFileByReceptionDateRange(request.StartDate, request.EndDate))
-                .And(new FindFileByType(request.FileType )); 
-            return CreateResponseForFilesByCriteria(request, criteria);
+            AndSpecification<File> criteria =
+                new FindFileByClient(request.Cid).And(
+                    new FindFileByReceptionDateRange(request.StartDate, request.EndDate))
+                                                 .And(new FindFileByType(request.FileType));
+            return this.CreateResponseForFilesByCriteria(request, criteria);
         }
+
+        #endregion
     }
 }

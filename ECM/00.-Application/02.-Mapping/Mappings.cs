@@ -1,29 +1,41 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ECM.Application.Routing;
-=======
-﻿using ECM.Application.Routing;
->>>>>>> Refactoring using Specifications
-using ECM.Domain.Entities;
-using ServiceStack.Common;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Mappings.cs" company="Abraham Alcaina">
+//   Abraham Alcaina
+// </copyright>
+// <summary>
+//   The mappings.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ECM.Application.Mapping
 {
-    static class Mappings
+    using ECM.Application.Routing;
+    using ECM.Domain.Entities;
+
+    using ServiceStack.Common;
+
+    /// <summary>
+    ///     The mappings.
+    /// </summary>
+    internal static class Mappings
     {
-<<<<<<< HEAD
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// Transform a file to DTO.
+        /// </summary>
+        /// <param name="file">
+        /// The file.
+        /// </param>
+        /// <returns>
+        /// The <see cref="FileType"/>.
+        /// </returns>
         public static FileType ToDto(this FileByTypeRequest file)
-=======
-        public static FileType ToDto(this FileByType file)
->>>>>>> Refactoring using Specifications
         {
             var result = file.TranslateTo<FileType>();
             result.Id = file.Type;
             return result;
         }
+
+        #endregion
     }
 }
