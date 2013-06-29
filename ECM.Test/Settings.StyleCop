@@ -1,4 +1,14 @@
 <StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>cid</Value>
+      <Value>CID</Value>
+      <Value>cuid</Value>
+      <Value>CUID</Value>
+      <Value>pid</Value>
+      <Value>PID</Value>
+    </CollectionProperty>
+  </GlobalSettings>
   <Analyzers>
     <Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
       <AnalyzerSettings>

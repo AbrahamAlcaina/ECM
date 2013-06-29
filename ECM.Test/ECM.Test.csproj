@@ -83,6 +83,13 @@
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequestTest.cs" />
     <Compile Include="00.-Application\02.-Mapping\MappingsTest.cs" />
     <Compile Include="00.-Application\ProgramTest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByTypeTest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByTagsTest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByReceptionDateRangeTest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindFileByLastUpdateRangeTest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindByIdest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindByEntityTest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindByClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +102,7 @@
       <Name>ECM</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="02.-Domain\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
