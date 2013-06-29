@@ -19,24 +19,8 @@ namespace ECM.Infrastructure.Repositories
     /// <summary>
     ///     The file repository.
     /// </summary>
-    internal class FileRepository : MongoRepository<File>, IFileRepository
+    internal class FileRepository : MongoRepository<File>
     {
-        #region Public Methods and Operators
 
-        /// <summary>
-        /// The count.
-        /// </summary>
-        /// <param name="criteria">
-        /// The criteria.
-        /// </param>
-        /// <returns>
-        /// The <see cref="long"/>.
-        /// </returns>
-        public long Count(Expression<Func<File, bool>> criteria)
-        {
-            return this.All(criteria).Count();
-        }
-
-        #endregion
     }
 }

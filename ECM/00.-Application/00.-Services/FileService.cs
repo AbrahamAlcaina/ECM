@@ -9,7 +9,6 @@
 namespace ECM.Application.Services
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     using ECM.Application.Routing;
@@ -97,10 +96,8 @@ namespace ECM.Application.Services
         /// </returns>
         public object Get(FileByUpdatedDates file)
         {
-            List<File> files =
-                this.Repository.All(f => f.LastUpdateTime >= file.StartDate && f.LastUpdateTime <= file.EndDate)
-                    .ToList();
-            return files.Count == 0 ? FileNotFound(file) : files;
+            var files = this.Repository.Where(f => f.LastUpdateTime >= file.StartDate && f.LastUpdateTime <= file.EndDate);
+            return !files.Any() ? this.FileNotFound(file) : files;
         }
         
         /// <summary>

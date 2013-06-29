@@ -12,8 +12,9 @@ namespace ECM.Application.Services
 
     using ECM.Domain.Entities;
     using ECM.Infrastructure;
-    using ECM.Infrastructure.Repositories;
 
+    using MongoRepository;
+    using System.Linq;
     /// <summary>
     ///     The file service base.
     /// </summary>
@@ -24,7 +25,7 @@ namespace ECM.Application.Services
         /// <summary>
         ///     Gets or sets the repository.
         /// </summary>
-        protected IFileRepository Repository { get; set; }
+        protected IRepository<File> Repository { get; set; }
 
         #endregion
 
@@ -42,7 +43,7 @@ namespace ECM.Application.Services
         /// <returns>
         /// The <see cref="object"/>.
         /// </returns>
-        protected object CreateResponseForSingleFileByCriteria(object file, ISpecification<File> criteria)
+        protected virtual object CreateResponseForSingleFileByCriteria(object file, ISpecification<File> criteria)
         {
             long count = this.Repository.Count(criteria.IsSatisfiedBy());
             this.InsertRangeInResponse(count);
@@ -66,11 +67,11 @@ namespace ECM.Application.Services
         /// <returns>
         /// The <see cref="object"/>.
         /// </returns>
-        protected object CreateResponseForFilesByCriteria(object file, ISpecification<File> criteria)
+        protected virtual object CreateResponseForFilesByCriteria(object file, ISpecification<File> criteria)
         {
             long count = this.Repository.Count(criteria.IsSatisfiedBy());
             this.InsertRangeInResponse(count);
-            return count == 0 ? this.FileNotFound(file) : this.Repository.All(criteria.IsSatisfiedBy());
+            return count == 0 ? this.FileNotFound(file) : this.Repository.Where(criteria.IsSatisfiedBy());
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace ECM.Application.Services
         /// <param name="count">
         /// The count.
         /// </param>
-        protected void InsertRangeInResponse(long count)
+        protected virtual void InsertRangeInResponse(long count)
         {
             var range = this.Request.Headers["Range"];
             if (string.IsNullOrEmpty(range))
