@@ -95,6 +95,11 @@
     <Compile Include="02.-Domain\04.-Specifications\FindByIdest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindByEntityTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindByClientTest.cs" />
+    <Compile Include="03.-Infrastructure\02.-LinqExtensions\IEnumerableExtensionTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\AndSpecificationTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\NotEqualSpecificationTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\OrSpecificationTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\SpecificationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -110,8 +115,6 @@
   <ItemGroup>
     <Folder Include="03.-Infrastructure\00.-ServiceStack\" />
     <Folder Include="03.-Infrastructure\01.-Repositories\" />
-    <Folder Include="03.-Infrastructure\02.-LinqExtensions\" />
-    <Folder Include="03.-Infrastructure\04.-Specifications\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
