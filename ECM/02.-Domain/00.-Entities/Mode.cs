@@ -24,9 +24,9 @@ namespace ECM.Domain.Entities
         Test, 
 
         /// <summary>
-        ///     The qualita assurance.
+        ///     The quality assurance.
         /// </summary>
-        QualitaAssurance, 
+        QualityAssurance, 
 
         /// <summary>
         ///     The production.

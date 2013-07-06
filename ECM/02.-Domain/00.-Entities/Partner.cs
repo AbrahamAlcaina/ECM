@@ -28,7 +28,7 @@ namespace ECM.Domain.Entities
         public Guid PartnerId { get; set; }
 
         /// <summary>
-        ///     Gets or sets the paygroup.
+        ///     Gets or sets the pay group.
         /// </summary>
         public string Paygroup { get; set; }
 

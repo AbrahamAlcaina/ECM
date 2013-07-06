@@ -19,7 +19,7 @@ namespace ECM.Application.Services
     /// <summary>
     ///     The client files service.
     /// </summary>
-    internal class ClientFilesService : FileServiceBase
+    public class ClientFilesService : FileServiceBase
     {
         #region Public Methods and Operators
 

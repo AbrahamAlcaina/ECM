@@ -1,6 +1,5 @@
-
-Microsoft Visual Studio Solution File, Format Version 10
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECM", "ECM\ECM.csproj", "{5EFD2B4C-8DBB-4C61-9A98-180A432A5CA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECM.Test", "ECM.Test\ECM.Test.csproj", "{9EB47D6C-50B8-42A0-A28E-569C7339FF93}"

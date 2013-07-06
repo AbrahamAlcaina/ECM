@@ -9,16 +9,17 @@
 namespace ECM.Application.Services
 {
     using System.Globalization;
+    using System.Linq;
 
     using ECM.Domain.Entities;
     using ECM.Infrastructure;
 
     using MongoRepository;
-    using System.Linq;
+
     /// <summary>
     ///     The file service base.
     /// </summary>
-    internal class FileServiceBase : Service
+    public class FileServiceBase : Service
     {
         #region Properties
 
