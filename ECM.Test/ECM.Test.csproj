@@ -130,6 +130,11 @@
     <Compile Include="02.-Domain\04.-Specifications\FindByIdest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindByEntityTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindByClientTest.cs" />
+    <Compile Include="03.-Infrastructure\02.-LinqExtensions\IEnumerableExtensionTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\AndSpecificationTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\NotEqualSpecificationTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\OrSpecificationTest.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\SpecificationTest.cs" />
     <Compile Include="03.-Infrastructure\AppHostTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,6 +147,10 @@
       <Project>{5efd2b4c-8dbb-4c61-9a98-180a432a5ca9}</Project>
       <Name>ECM</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="03.-Infrastructure\00.-ServiceStack\" />
+    <Folder Include="03.-Infrastructure\01.-Repositories\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

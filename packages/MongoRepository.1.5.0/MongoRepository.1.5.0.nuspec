@@ -3,6 +3,7 @@
   <metadata>
     <id>MongoRepository</id>
     <version>1.5.0</version>
+    <title>MongoRepository</title>
     <authors>tgeek,  RobIII</authors>
     <owners>tgeek,  RobIII</owners>
     <licenseUrl>http://mongorepository.codeplex.com/license</licenseUrl>
@@ -12,6 +13,7 @@
     <description>This easy to use library implements the repository pattern on top of Official MongoDB C# driver.</description>
     <summary>Provides a repository on top of the 10gen driver and FluentMongo.</summary>
     <releaseNotes>.All() method is now obsolete; MongoRepository itself implements IQueryable&lt;T&gt;</releaseNotes>
+    <copyright />
     <language>en-US</language>
     <tags>mongo mongodb repository</tags>
     <dependencies>
