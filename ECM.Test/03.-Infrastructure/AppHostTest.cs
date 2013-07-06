@@ -12,9 +12,9 @@ namespace ECM.Test._03._Infrastructure
 
     using MongoRepository;
 
-    using Xunit;
+    using ServiceStack.WebHost.Endpoints;
 
-    using global::ServiceStack.WebHost.Endpoints;
+    using Xunit;
 
     /// <summary>
     /// The app host test.
@@ -31,7 +31,7 @@ namespace ECM.Test._03._Infrastructure
             var sut = new AppHost();
 
             // act
-            var result = sut.Container.Resolve<IRepository<File>>();
+            var result = sut.Container.TryResolve<IRepository<File>>();
 
             // assert
             Assert.NotNull(result);

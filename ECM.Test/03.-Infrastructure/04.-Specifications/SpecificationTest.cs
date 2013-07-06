@@ -80,6 +80,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(9, true)]
         [InlineData(5, false)]
         [InlineData(15, false)]
@@ -105,6 +106,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(5, true)]
         [InlineData(3, false)]
         [InlineData(7, false)]
@@ -139,6 +141,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(5, true)]
         [InlineData(11, true)]
         [InlineData(21, false)]
@@ -176,6 +179,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(9, true)]
         [InlineData(5, true)]
         [InlineData(11, false)]
@@ -200,6 +204,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(9, true)]
         [InlineData(5, true)]
         [InlineData(11, false)]
@@ -225,6 +230,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(9, true)]
         [InlineData(5, false)]
         [InlineData(11, false)]
@@ -249,6 +255,7 @@ namespace Ecm.Test
         /// <param name="result">
         /// The result.
         /// </param>
+        [Theory]
         [InlineData(9, true)]
         [InlineData(5, false)]
         [InlineData(11, false)]
