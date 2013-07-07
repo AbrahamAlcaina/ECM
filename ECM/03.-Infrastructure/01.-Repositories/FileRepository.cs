@@ -21,6 +21,5 @@ namespace ECM.Infrastructure.Repositories
     /// </summary>
     internal class FileRepository : MongoRepository<File>
     {
-
     }
 }

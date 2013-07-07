@@ -45,7 +45,7 @@ namespace ECM.Infrastructure.ServiceStack
         /// </param>
         public override void Configure(Container container)
         {
-            container.RegisterAutoWiredAs<FileRepository, IRepository<File>>();
+            container.Register<IRepository<File>>(new FileRepository());
         }
 
         #endregion

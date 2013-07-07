@@ -46,11 +46,12 @@ namespace ECM.Infrastructure
         /// </returns>
         public override Expression<Func<TEntity, bool>> IsSatisfiedBy()
         {
-            InvocationExpression invokedExpr = Expression.Invoke(
-                this.RightSide.Predicate, this.LeftSide.Predicate.Parameters);
-            return
-                Expression.Lambda<Func<TEntity, bool>>(
-                    Expression.NotEqual(this.RightSide.Predicate.Body, invokedExpr), this.LeftSide.Predicate.Parameters);
+            var parameterExpression = LeftSide.Predicate.Parameters[0];
+            var visitor = new SubstitutionExpressionVisitor();
+            visitor.Substitution[this.RightSide.Predicate.Parameters[0]] = parameterExpression;
+
+            Expression body = Expression.NotEqual(LeftSide.Predicate.Body, visitor.Visit(this.RightSide.Predicate.Body));
+            return Expression.Lambda<Func<TEntity, bool>>(body, parameterExpression);
         }
 
         #endregion

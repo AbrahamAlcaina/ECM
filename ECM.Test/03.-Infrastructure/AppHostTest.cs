@@ -31,8 +31,8 @@ namespace ECM.Test._03._Infrastructure
             var sut = new AppHost();
 
             // act
-            var result = sut.Container.TryResolve<IRepository<File>>();
-
+            var result = sut.Container.Resolve<IRepository<File>>();
+            
             // assert
             Assert.NotNull(result);
             Assert.IsType<FileRepository>(result);

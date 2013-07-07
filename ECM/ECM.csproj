@@ -180,6 +180,8 @@
     <Compile Include="03.-Infrastructure\04.-Specifications\NotEqualSpecification.cs" />
     <Compile Include="03.-Infrastructure\04.-Specifications\OrSpecification.cs" />
     <Compile Include="03.-Infrastructure\04.-Specifications\Specification.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\SpecificationExtension.cs" />
+    <Compile Include="03.-Infrastructure\04.-Specifications\SubstitutionExpressionVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
