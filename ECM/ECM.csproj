@@ -115,8 +115,6 @@
     <Compile Include="00.-Application\00.-Services\FileService.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDates.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDatesFileType.cs" />
-    <Compile Include="00.-Application\01.-Routing\FileByTagsRequest.cs" />
-    <Compile Include="00.-Application\01.-Routing\FileByTypeRequest.cs" />
     <Compile Include="00.-Application\00.-Services\FileServiceBase.cs" />
     <Compile Include="00.-Application\00.-Services\Service.cs" />
     <Compile Include="00.-Application\01.-Routing\CycleByUpdatedDatesType.cs" />

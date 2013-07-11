@@ -28,7 +28,7 @@ namespace ECM.Test.Application.Mapping
         public void FileTypeMapping()
         {
             // arrange
-            var fileByTypeRequest = new FileByTypeRequest { Type = "SRF" };
+            var fileByTypeRequest = new FileByType { Type = "SRF" };
 
             // act 
             FileType result = fileByTypeRequest.ToDto();

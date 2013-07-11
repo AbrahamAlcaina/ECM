@@ -29,7 +29,7 @@ namespace ECM.Application.Mapping
         /// <returns>
         /// The <see cref="FileType"/>.
         /// </returns>
-        public static FileType ToDto(this FileByTypeRequest file)
+        public static FileType ToDto(this FileByType file)
         {
             var result = file.TranslateTo<FileType>();
             result.Id = file.Type;

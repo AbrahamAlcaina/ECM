@@ -35,6 +35,11 @@ namespace ECM.Application.Routing
         /// </returns>
         public override string ToString()
         {
+            if (string.IsNullOrEmpty(this.Type))
+            {
+                return "Type null";
+            }
+
             return string.Format("Type: '{0}'", this.Type);
         }
 

@@ -36,7 +36,7 @@ namespace ECM.Application.Routing
         public override string ToString()
         {
             return string.Format(
-                "File type '{0}'. Updated form {1} to {2}", this.FileType, this.StartDate, this.EndDate);
+                "File type '{0}'. Updated form {1} to {2}", this.FileType, this.StartDate.ToShortDateString(), this.EndDate.ToShortDateString());
         }
 
         #endregion

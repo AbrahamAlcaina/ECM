@@ -141,9 +141,11 @@
     <Compile Include="00.-Application\00.-Services\ClientFilesServiceTest.cs" />
     <Compile Include="00.-Application\00.-Services\FileServiceBaseTest.cs" />
     <Compile Include="00.-Application\00.-Services\ServiceTest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByTypeTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDatesFileTypeTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByIdTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequestTest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByUpdatedDatesTypeTest.cs" />
     <Compile Include="00.-Application\02.-Mapping\MappingsTest.cs" />
     <Compile Include="00.-Application\ProgramTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindFileByTypeTest.cs" />
