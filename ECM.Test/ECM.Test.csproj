@@ -141,6 +141,7 @@
     <Compile Include="00.-Application\00.-Services\ClientFilesServiceTest.cs" />
     <Compile Include="00.-Application\00.-Services\FileServiceBaseTest.cs" />
     <Compile Include="00.-Application\00.-Services\ServiceTest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByUpdatedDatesTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTypeTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByDatesFileTypeTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByIdTest.cs" />

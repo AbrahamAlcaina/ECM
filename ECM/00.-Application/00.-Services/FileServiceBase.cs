@@ -55,7 +55,6 @@ namespace ECM.Application.Services
 
             return count > 1 ? this.TooManyFiles(file) : this.Repository.GetSingle(criteria.IsSatisfiedBy());
         }
-
         /// <summary>
         /// The create response for files by criteria.
         /// </summary>
@@ -83,14 +82,14 @@ namespace ECM.Application.Services
         /// </param>
         protected internal virtual void InsertRangeInResponse(long count)
         {
-            var range = base.Request.Headers["Range"];
-            if (string.IsNullOrEmpty(range))
+            if (!this.Request.Headers.AllKeys.Contains("Range"))
             {
                 this.Response.AddHeader("Content-Range", count.ToString(CultureInfo.InvariantCulture));
             }
             else
             {
-                this.Response.AddHeader("Content-Range", range + "/" + count);
+                var range = this.Request.Headers["Range"];
+                this.Response.AddHeader("Content-Range", count + "/" + range);
             }
         }
 

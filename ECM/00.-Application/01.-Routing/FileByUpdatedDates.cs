@@ -31,5 +31,17 @@ namespace ECM.Application.Routing
         public DateTime StartDate { get; set; }
 
         #endregion
+
+        /// <summary>
+        ///     The to string.
+        /// </summary>
+        /// <returns>
+        ///     The <see cref="string" />.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format(
+                "Updated form {0} to {1}", this.StartDate.ToShortDateString(), this.EndDate.ToShortDateString());
+        }
     }
 }
