@@ -37,7 +37,7 @@ namespace ECM.Application.Routing
         /// </returns>
         public override string ToString()
         {
-            return string.Format("Id: '{0}'", this.IdFile);
+            return this.IdFile == default(Guid) ? "Id null" : string.Format("Id: '{0}'", this.IdFile);
         }
 
         #endregion

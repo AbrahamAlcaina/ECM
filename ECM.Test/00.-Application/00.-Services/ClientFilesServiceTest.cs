@@ -14,12 +14,14 @@ namespace ECM.Test._00._Application._00._Services
     using Xunit;
 
     /// <summary>
-    /// The client files service test.
+    ///     The client files service test.
     /// </summary>
     public class ClientFilesServiceTest
     {
+        #region Public Methods and Operators
+
         /// <summary>
-        /// Test get with a null client.
+        ///     Test get with a null client.
         /// </summary>
         [Fact]
         public void GetWithNullClient()
@@ -29,10 +31,12 @@ namespace ECM.Test._00._Application._00._Services
             var request = new Client();
 
             // act
-            var result = sut.Object.Get(request);
+            object result = sut.Object.Get(request);
 
             // assert
             Assert.Null(result);
         }
+
+        #endregion
     }
 }

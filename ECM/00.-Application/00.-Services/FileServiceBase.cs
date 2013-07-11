@@ -44,7 +44,7 @@ namespace ECM.Application.Services
         /// <returns>
         /// The <see cref="object"/>.
         /// </returns>
-        protected virtual object CreateResponseForSingleFileByCriteria(object file, ISpecification<File> criteria)
+        internal protected virtual object CreateResponseForSingleFileByCriteria(object file, ISpecification<File> criteria)
         {
             long count = this.Repository.Count(criteria.IsSatisfiedBy());
             this.InsertRangeInResponse(count);
@@ -81,9 +81,9 @@ namespace ECM.Application.Services
         /// <param name="count">
         /// The count.
         /// </param>
-        protected virtual void InsertRangeInResponse(long count)
+        protected internal virtual void InsertRangeInResponse(long count)
         {
-            var range = this.Request.Headers["Range"];
+            var range = base.Request.Headers["Range"];
             if (string.IsNullOrEmpty(range))
             {
                 this.Response.AddHeader("Content-Range", count.ToString(CultureInfo.InvariantCulture));

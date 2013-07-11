@@ -109,6 +109,7 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Rx-PlatformServices.2.1.30214.0\lib\Net45\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TechTalk.SpecFlow">
@@ -138,6 +139,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="00.-Application\00.-Services\ClientFilesServiceTest.cs" />
+    <Compile Include="00.-Application\00.-Services\FileServiceBaseTest.cs" />
+    <Compile Include="00.-Application\00.-Services\ServiceTest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByDatesFileTypeTest.cs" />
+    <Compile Include="00.-Application\01.-Routing\FileByIdTest.cs" />
     <Compile Include="00.-Application\01.-Routing\FileByTagsRequestTest.cs" />
     <Compile Include="00.-Application\02.-Mapping\MappingsTest.cs" />
     <Compile Include="00.-Application\ProgramTest.cs" />
@@ -145,7 +150,7 @@
     <Compile Include="02.-Domain\04.-Specifications\FindFileByTagsTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindFileByReceptionDateRangeTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindFileByLastUpdateRangeTest.cs" />
-    <Compile Include="02.-Domain\04.-Specifications\FindByIdest.cs" />
+    <Compile Include="02.-Domain\04.-Specifications\FindByIdTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindByEntityTest.cs" />
     <Compile Include="02.-Domain\04.-Specifications\FindByClientTest.cs" />
     <Compile Include="03.-Infrastructure\02.-LinqExtensions\IEnumerableExtensionTest.cs" />
@@ -167,6 +172,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="02.-Domain\03.-Entities\" />
     <Folder Include="03.-Infrastructure\00.-ServiceStack\" />
     <Folder Include="03.-Infrastructure\01.-Repositories\" />
   </ItemGroup>

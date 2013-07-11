@@ -17,7 +17,7 @@ namespace ECM.Test.Application.Mapping
     /// <summary>
     ///     The mappings test.
     /// </summary>
-    internal class MappingsTest
+    public class MappingsTest
     {
         #region Public Methods and Operators
 

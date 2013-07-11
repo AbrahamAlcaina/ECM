@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ECM")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Abraham Alcaina")]
 [assembly: AssemblyProduct("ECM")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
