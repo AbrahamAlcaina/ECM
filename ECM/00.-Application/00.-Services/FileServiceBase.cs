@@ -26,7 +26,7 @@ namespace ECM.Application.Services
         /// <summary>
         ///     Gets or sets the repository.
         /// </summary>
-        protected IRepository<File> Repository { get; set; }
+        internal protected IRepository<File> Repository { get; set; }
 
         #endregion
 

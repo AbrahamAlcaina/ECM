@@ -162,6 +162,7 @@
     <Compile Include="03.-Infrastructure\04.-Specifications\OrSpecificationTest.cs" />
     <Compile Include="03.-Infrastructure\04.-Specifications\SpecificationTest.cs" />
     <Compile Include="03.-Infrastructure\AppHostTest.cs" />
+    <Compile Include="99.-Utils\MockExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
